@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/22.1.4/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/22.1.4/css/dx.light.css" />
+    <script src="https://unpkg.com/devextreme-quill@1.5.16/dist/dx-quill.min.js"></script>
+    <script src="https://cdn3.devexpress.com/jslib/22.1.4/js/dx.all.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+          content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>DUNEWS Admin</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <!-- Custom CSS -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar" data-navbarbg="skin5">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <div class="navbar-header" data-logobg="skin6">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <a class="navbar-brand">
+                    <!-- Logo icon -->
+                    <b class="logo-icon">
+                        <!-- Dark Logo icon -->
+                        <img src="plugins/images/banner.jpg" alt="homepage" />
+                    </b>
+                </a>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                   href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+                <!-- ============================================================== -->
+                <!-- Right side toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+
+                    <!-- ============================================================== -->
+
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <li>
+                        <a class="profile-pic" href="#">
+                            <img src="plugins/images/ava.png" alt="user-img" width="36"
+                                 class="img-circle"><span class="text-white font-medium" th:text="${username}"></span></a>
+                    </li>
+
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link text-body small" th:href="@{/logout}"><span class="text-white font-medium">Logout</span></a>
+                    </li>
+
+
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar" data-sidebarbg="skin6">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <!-- User Profile-->
+                    <li class="sidebar-item pt-2">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="home"
+                           aria-expanded="false">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <span class="hide-menu">Home</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="user"
+                           aria-expanded="false">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span class="hide-menu">User</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="category"
+                           aria-expanded="false">
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                            <span class="hide-menu">Category</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="article"
+                           aria-expanded="false">
+                            <i class="fa fa-font" aria-hidden="true"></i>
+                            <span class="hide-menu">Article</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comment"
+                           aria-expanded="false">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                            <span class="hide-menu">Comment</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="error"
+                           aria-expanded="false">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <span class="hide-menu">Error</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb bg-white">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Article</h4>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                        Add
+                    </button>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Article</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="mb-3 mt-3">
+                                <label for="txttitle" class="form-label">Title : </label>
+                                <input type="text" class="form-control" id="txttitle" placeholder="Enter name" name="txttitle">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtname" class="form-label">Company Name :</label>
+                                <input type="text" class="form-control" id="txtname" placeholder="Enter company name" name="txtname">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtauthor" class="form-label">Author :</label>
+                                <input type="text" class="form-control" id="txtauthor" placeholder="Enter author" author="txtauthor">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtdescription" class="form-label">Description :</label>
+                                <input type="text" class="form-control" id="txtdescription" placeholder="Enter description" description="txtdescription">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txturl" class="form-label">Url :</label>
+                                <input type="text" class="form-control" id="txturl" placeholder="Enter url" url="txturl">
+                            </div>
+                            <div class="mb-3">
+                                <label for="category1" class="form-label">Category :</label>
+                                <select id="category1" name="category1">
+                                </select></div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Image :</label>
+                                <input type="file" class="form-control-file" name="" id="urlimg" placeholder="" aria-describedby="fileHelpId">
+                             </div>
+                            <div class="mb-3">
+                                <label class="form-label">Content :</label>
+                                <div class="demo-container">
+                                    <div class="html-editor"></div>
+                                    <div class="options">
+                                        <div class="caption">Options</div>
+                                        <div class="option">
+                                            <div id="multiline"></div>
+                                        </div>
+                                        <div class="option">
+                                            <div class="label">Image upload tabs:</div>
+                                            <div id="image-uploader-tabs"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="addArticle">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- ============================================================== -->
+
+        <div class="modal" id="modalUpdate">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Article</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="mb-3 mt-3">
+                                <label for="txtname_update" class="form-label">ID : </label>
+                                <input type="text" class="form-control"  id="txtid"  name="txtid" readonly>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label for="txttitle" class="form-label">Title : </label>
+                                <input type="text" class="form-control"  id="txttitle_update" placeholder="Enter name" name="txttitle">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtname" class="form-label">Company Name :</label>
+                                <input type="text" class="form-control"  id="txtname_update" placeholder="Enter company name" name="txtname">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtauthor" class="form-label">Author :</label>
+                                <input type="text" class="form-control"  id="txtauthor_update" placeholder="Enter author" author="txtauthor">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtdescription" class="form-label">Description :</label>
+                                <input type="text" class="form-control" id="txtdescription_update" placeholder="Enter description" description="txtdescription">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txturl" class="form-label">Url :</label>
+                                <input type="text" class="form-control"  id="txturl_update" placeholder="Enter url" url="txturl">
+                            </div>
+                            <div class="mb-3">
+                                <label for="category2" class="form-label">Category :</label>
+                                <select id="category2" name="category2">
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Content :</label>
+                                <div class="demo-container">
+                                    <div class="html-editor-update"></div>
+                                    <div class="options">
+                                        <div class="caption">Options</div>
+                                        <div class="option">
+                                            <div id="multiline2"></div>
+                                        </div>
+                                        <div class="option">
+                                            <div class="label">Image upload tabs:</div>
+                                            <div id="image-uploader-tabs2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Image :</label>
+                                <input type="file" class="form-control-file" name="" id="urlimg_update" placeholder="" aria-describedby="fileHelpId">
+                            </div>
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" id="txtcreate_update"  name="txtcreate" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" id="txtcontent3"  name="txtcontent3" readonly>
+                            </div>
+                                <button type="button" class="btn btn-primary" onclick="updateArticle()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- RECENT ARTICLE -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <div class="table-responsive">
+                        <table class="table no-wrap" id="article1" style="table-layout:fixed; width:100%">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center"> 2021 © DuNEWS <a
+                href="http://localhost:8083/home">Dunews.com</a>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<!-- Bootstrap tether Core JavaScript -->
+<script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app-style-switcher.js"></script>
+<script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!--Wave Effects -->
+<script src="js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="js/sidebarmenu.js"></script>
+<!--Custom JavaScript -->
+<script src="js/custom.js"></script>
+<!--This page JavaScript -->
+<!--chartis chart-->
+<script>
+    const main = async () => {
+        var url = 'http://localhost:8083/api/article';
+        var reponse = await fetch(url);
+        var data = await reponse.json();
+        renderSlide0(data);
+    }
+
+    const renderSlide0 = (data) => {
+        var domSlide = document.querySelector("#article1")
+        var html = `
+                    <thead>
+                <tr>
+                    <th className="border-top-0" >#</th>
+                    <th className="border-top-0" style="width:600px">Title</th>
+                    <th className="border-top-0">Image</th>
+                    <th className="border-top-0">Category</th>
+                    <th className="border-top-0">Time</th>
+                    <th className="border-top-0">Author</th>
+                    <th colspan="2">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+        `;
+        data.forEach((element,index) => {
+            var date1 = new Date(element.createDate).toLocaleDateString();
+            html += `
+            <tr>
+                                        <td>${element.id}</td>
+                                        <td style="overflow:hidden; width:600px;">
+                                        <a class="mb-3 d-block text-success" href="../news/${element.articleKey}">${element.title}</a>
+                                        <p id="contenttext" class="m-0" >${element.description}</p></td>
+                                        <td><img src="${element.urlToImage}" style="width:80px; height:80px"></td>
+                                        <td class="txt-oflo">${element.categoryKey}</td>
+                                        <td>${date1}</td>
+                                        <td style="overflow:hidden;">${element.author}</td>
+                                        <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUpdate" onclick='renderUpdate(${JSON.stringify(element)})'>
+                        Edit
+                 </button>
+                <button type="button" class="btn btn-primary" onclick='deleteId(${element.id})'>
+                    Delete
+                </button>
+                </td>
+                                    </tr>
+                `;
+        });
+        html+=`</tbody>
+        `;
+        domSlide.innerHTML = html;
+    }
+
+    const  renderUpdate=(data)=>{
+        document.getElementById("txtid").value=data.id;
+        document.getElementById("txttitle_update").value=data.title;
+        document.getElementById("txtname_update").value=data.name;
+        document.getElementById("txtauthor_update").value=data.author;
+        document.getElementById("txtdescription_update").value=data.description;
+        document.getElementById("txturl_update").value=data.url;
+        document.getElementById("category2").value=data.categoryKey;
+        document.getElementById("urlimg_update").value=data.urlToImage;
+        document.getElementById("txtcreate_update").value=data.createDate;
+        document.getElementById("txtcontent3").value=data.content;
+        InitUpdate(data.content);
+    }
+    var mainContent='';
+
+    $(() => {
+        const editor = $('.html-editor').dxHtmlEditor({
+            height: 725,
+            value: markup,
+            imageUpload: {
+                tabs: ['file', 'url'],
+                uploadUrl: '/UploadFile',
+                uploadDirectory: '/Imgs'
+            },
+            toolbar: {
+                items: [
+                    'undo', 'redo', 'separator',
+                    {
+                        name: 'size',
+                        acceptedValues: ['8pt', '10pt', '12pt', '14pt', '18pt', '24pt', '36pt'],
+                    },
+                    {
+                        name: 'font',
+                        acceptedValues: ['Arial', 'Courier New', 'Georgia', 'Impact', 'Lucida Console', 'Tahoma', 'Times New Roman', 'Verdana'],
+                    },
+                    'separator', 'bold', 'italic', 'strike', 'underline', 'separator',
+                    'alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'separator',
+                    'orderedList', 'bulletList', 'separator',
+                    {
+                        name: 'header',
+                        acceptedValues: [false, 1, 2, 3, 4, 5],
+                    }, 'separator',
+                    'color', 'background', 'separator',
+                    'link', 'image', 'separator',
+                    'clear', 'codeBlock', 'blockquote', 'separator',
+                    'insertTable', 'deleteTable',
+                    'insertRowAbove', 'insertRowBelow', 'deleteRow',
+                    'insertColumnLeft', 'insertColumnRight', 'deleteColumn',
+                ],
+            },
+            mediaResizing: {
+                enabled: true,
+            },
+            onValueChanged(e) {
+                $('.value-content').text(e.component.option('value'));
+                mainContent=e.component.option('value');
+            },
+        }).dxHtmlEditor('instance');
+
+        $('#multiline').dxCheckBox({
+            text: 'Multiline toolbar',
+            value: true,
+            onValueChanged(e) {
+                editor.option('toolbar.multiline', e.value);
+            },
+        });
+        $('#multiline2').dxCheckBox({
+            text: 'Multiline toolbar',
+            value: true,
+            onValueChanged(e) {
+                editor.option('toolbar.multiline', e.value);
+            },
+        });
+
+        $('#image-uploader-tabs').dxSelectBox({
+            items: tabs,
+            value: tabs[2].value,
+            valueExpr: 'value',
+            displayExpr: 'name',
+            onValueChanged: (e) => {
+                editor.option('imageUpload.tabs', e.value);
+            },
+        });
+        $('#image-uploader-tabs2').dxSelectBox({
+            items: tabs,
+            value: tabs[2].value,
+            valueExpr: 'value',
+            displayExpr: 'name',
+            onValueChanged: (e) => {
+                editor.option('imageUpload.tabs', e.value);
+            },
+        });
+    });
+    var contentUpdate='';
+
+    function InitUpdate(content){
+        $(() => {
+            const editor = $('.html-editor-update').dxHtmlEditor({
+                height: 725,
+                value: content,
+                imageUpload: {
+                    tabs: ['file', 'url'],
+                    uploadUrl: '/UploadFile',
+                    uploadDirectory: '/Imgs'
+                },
+                toolbar: {
+                    items: [
+                        'undo', 'redo', 'separator',
+                        {
+                            name: 'size',
+                            acceptedValues: ['8pt', '10pt', '12pt', '14pt', '18pt', '24pt', '36pt'],
+                        },
+                        {
+                            name: 'font',
+                            acceptedValues: ['Arial', 'Courier New', 'Georgia', 'Impact', 'Lucida Console', 'Tahoma', 'Times New Roman', 'Verdana'],
+                        },
+                        'separator', 'bold', 'italic', 'strike', 'underline', 'separator',
+                        'alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'separator',
+                        'orderedList', 'bulletList', 'separator',
+                        {
+                            name: 'header',
+                            acceptedValues: [false, 1, 2, 3, 4, 5],
+                        }, 'separator',
+                        'color', 'background', 'separator',
+                        'link', 'image', 'separator',
+                        'clear', 'codeBlock', 'blockquote', 'separator',
+                        'insertTable', 'deleteTable',
+                        'insertRowAbove', 'insertRowBelow', 'deleteRow',
+                        'insertColumnLeft', 'insertColumnRight', 'deleteColumn',
+                    ],
+                },
+                mediaResizing: {
+                    enabled: true,
+                },
+                onValueChanged(e) {
+                    $('.value-content').text(e.component.option('value'));
+                    contentUpdate=e.component.option('value');
+                },
+            }).dxHtmlEditor('instance');
+
+            $('#multiline2').dxCheckBox({
+                text: 'Multiline toolbar',
+                value: true,
+                onValueChanged(e) {
+                    editor.option('toolbar.multiline', e.value);
+                },
+            });
+
+            $('#image-uploader-tabs').dxSelectBox({
+                items: tabs,
+                value: tabs[2].value,
+                valueExpr: 'value',
+                displayExpr: 'name',
+                onValueChanged: (e) => {
+                    editor.option('imageUpload.tabs', e.value);
+                },
+            });
+        });
+    }
+    InitUpdate('');
+    document.querySelector("#addArticle").addEventListener('click',(event)=>{
+        let title =document.querySelector("#txttitle").value;
+        let name =document.querySelector("#txtname").value;
+        let author = document.querySelector("#txtauthor").value;
+        let description =document.querySelector("#txtdescription").value;
+        let url =document.querySelector("#txturl").value;
+        let category=document.querySelector("#category1").value;
+        let content=mainContent;
+        console.log(content);
+        let articlekey=title.normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase().replace( /\s/g, '-');
+        let today = new Date();
+        let dataSend = {
+            createDate: today,
+            updateDate: today,
+            idCreateUser: 1,
+            name: name,
+            author: author,
+            title: title,
+            description: description,
+            url:url,
+            publishedAt: today,
+            content:content,
+            categoryKey: category,
+            articleKey: articlekey
+        };
+        console.log(dataSend);
+        let file = document.querySelector("#urlimg").files[0];
+        let form= new FormData();
+        form.append("file",file);
+        form.append("model",JSON.stringify(dataSend));
+        fetch("/api/article/add",{
+            body:form,
+            method:"POST",
+        })
+            .then(rs=>{
+                if(rs.status==200){
+                    alert("Thêm thành công!!!");
+                    main()
+                }else{
+                    alert("Thêm thất bại")
+                }
+            })
+    });
+    const deleteId=async (id)=>{
+        let response = await fetch("/api/article/delete?id="+id,{
+            method:"DELETE"
+        }).then(() => {
+            main()
+        });
+    }
+    const updateArticle=async()=>{
+        let id=document.querySelector("#txtid").value;
+        let title =document.querySelector("#txttitle_update").value;
+        let name =document.querySelector("#txtname_update").value;
+        let author = document.querySelector("#txtauthor_update").value;
+        let description =document.querySelector("#txtdescription_update").value;
+        let url =document.querySelector("#txturl_update").value;
+        let category=document.querySelector("#category2").value;
+        let content = contentUpdate;
+        let createdate=document.querySelector("#txtcreate_update").value;
+        let articlekey=title.normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase().replace( /\s/g, '-');
+        let today = new Date();
+        let dataSend = {
+            id:id,
+            createDate: createdate,
+            updateDate: today,
+            idCreateUser: 1,
+            name: name,
+            author: author,
+            title: title,
+            description: description,
+            url:url,
+            publishedAt: createdate,
+            content:contentUpdate,
+            categoryKey: category,
+            articleKey: articlekey
+        };
+        let file = document.querySelector("#urlimg_update").files[0];
+        let form= new FormData();
+        form.append("file",file);
+        form.append("model",JSON.stringify(dataSend));
+        fetch("/api/article/update",{
+            body:form,
+            method:"PUT",
+        })
+            .then(rs=>{
+                if(rs.status==200){
+                    alert("Update thành công!!!");
+                    main()
+                }else{
+                    alert("Update thất bại")
+                }
+            })
+    }
+    const main1 = async () => {
+        var url = 'http://localhost:8083/api/category';
+        var reponse = await fetch(url);
+        var data = await reponse.json();
+        renderSlide12(data);
+        renderSlide21(data);
+    }
+    const renderSlide12 = (data) => {
+        var domSlide = document.querySelector("#category1")
+        var html = '';
+        data.forEach((element,index) => {
+            html+=`<option value="${element.categoryKey}">${element.categoryName}</option>`;
+        });
+        domSlide.innerHTML = html;
+    }
+    const renderSlide21 = (data) => {
+        var domSlide = document.querySelector("#category2")
+        var html = '';
+        data.forEach((element,index) => {
+            html+=`<option value="${element.categoryKey}">${element.categoryName}</option>`;
+        });
+        domSlide.innerHTML = html;
+    }
+    main()
+    main1()
+</script>
+</body>
+</html>

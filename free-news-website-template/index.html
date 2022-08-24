@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DuNews</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<!-- Topbar Start -->
+<div class="container-fluid d-none d-lg-block">
+    <div class="row align-items-center bg-dark px-lg-5">
+        <div class="col-lg-9">
+            <nav class="navbar navbar-expand-sm bg-dark p-0">
+                <ul class="navbar-nav ml-n2">
+                    <li class="nav-item border-right border-secondary">
+                        <a class="nav-link text-body small" href="#" id="date"></a>
+                    </li>
+                    <li class="nav-item border-right border-secondary">
+                        <a class="nav-link text-body small" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-body small" href="#">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-lg-3 text-right d-none d-md-block">
+            <nav class="navbar navbar-expand-sm bg-dark p-0">
+                <ul class="navbar-nav ml-auto mr-n2">
+                    <li class="nav-item">
+                        <a class="nav-link text-body" href="#"><small class="fab fa-twitter"></small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-body" href="#"><small class="fab fa-facebook-f"></small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-body" href="#"><small class="fab fa-linkedin-in"></small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-body" href="#"><small class="fab fa-instagram"></small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-body" href="#"><small class="fab fa-google-plus-g"></small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-body" href="#"><small class="fab fa-youtube"></small></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row align-items-center bg-white py-3 px-lg-5">
+        <div class="col-lg-4">
+            <a href="index.html" class="navbar-brand p-0 d-none d-lg-block">
+                <h1 class="m-0 display-4 text-uppercase text-primary">DU<span class="text-secondary font-weight-normal">News</span>
+                </h1>
+            </a>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+            <a href="https://htmlcodex.com"><img class="img-fluid" src="img/newsbanner.jpg" alt=""></a>
+        </div>
+    </div>
+</div>
+
+<!-- Topbar End -->
+
+
+<!-- Navbar Start -->
+<div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 display-4 text-uppercase text-primary">Biz<span
+                    class="text-white font-weight-normal">News</span></h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav mr-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="category.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Category</a>
+                    <div class="dropdown-menu rounded-0 m-0" id="dropdown">
+                        
+                    </div>
+                </div>
+                <a href="single.html" class="nav-item nav-link">TV Show</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
+                <input type="text" class="form-control border-0" placeholder="Keyword">
+                <div class="input-group-append">
+                    <button class="input-group-text bg-primary text-dark border-0 px-3"><i
+                            class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+
+<!-- Main News Slider Start -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-7 px-0" id="carousel">
+            <div class="owl-carousel main-carousel position-relative">
+
+            </div>
+        </div>
+        <div class="col-lg-5 px-0">
+            <div class="row mx-0" id="content1">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main News Slider End -->
+
+
+<!-- Breaking News Start -->
+<div class="container-fluid bg-dark py-3 mb-3">
+    <div class="container">
+        <div class="row align-items-center bg-dark">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">Breaking
+                        News
+                    </div>
+                    <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
+                         style="width: calc(100% - 170px); padding-right: 90px;" id="breakingnew">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breaking News End -->
+
+
+<!-- News With Sidebar Start -->
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row" id="content3">
+
+                </div>
+                <div class="float-right">
+                    <div class="section-title">
+                        <a class="text-secondary font-weight-medium text-decoration-none" href="">View All ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Social Follow Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Follow Us</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <a href="https://www.facebook.com/chauuduu/"
+                           class="d-block w-100 text-white text-decoration-none mb-3" style="background: #39569E;">
+                            <i class="fab fa-facebook-f text-center py-4 mr-3"
+                               style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">U NEWS</span>
+                        </a>
+                        <a href="https://twitter.com/duloveslisa"
+                           class="d-block w-100 text-white text-decoration-none mb-3" style="background: #52AAF4;">
+                            <i class="fab fa-twitter text-center py-4 mr-3"
+                               style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">U NEWS OFFICIAL</span>
+                        </a>
+                        <a href="https://www.instagram.com/pitbullkiu/"
+                           class="d-block w-100 text-white text-decoration-none mb-3" style="background: #0185AE;">
+                            <i class="fab fa-linkedin-in text-center py-4 mr-3"
+                               style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">UNEWS</span>
+                        </a>
+                        <a href="https://www.instagram.com/pitbullkiu/"
+                           class="d-block w-100 text-white text-decoration-none mb-3" style="background: #C8359D;">
+                            <i class="fab fa-instagram text-center py-4 mr-3"
+                               style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">UNEWSOFFICIAL</span>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCq7TdDGri1yZdmfvn5F6atw"
+                           class="d-block w-100 text-white text-decoration-none mb-3" style="background: #DC472E;">
+                            <i class="fab fa-youtube text-center py-4 mr-3"
+                               style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">UNEWS OFFICIAL</span>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCq7TdDGri1yZdmfvn5F6atw"
+                           class="d-block w-100 text-white text-decoration-none" style="background: #055570;">
+                            <i class="fab fa-vimeo-v text-center py-4 mr-3"
+                               style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">UNEWS OFFICIAL</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Social Follow End -->
+
+                <!-- Ads Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Advertisement</h4>
+                    </div>
+                    <div class="bg-white text-center border border-top-0 p-3">
+                        <a href=""><img class="img-fluid" src="img/news-800x500-2.jpg" alt=""></a>
+                    </div>
+                </div>
+                <!-- Ads End -->
+
+                <!-- Popular News Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Trending News</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3" id="content4">
+
+
+                    </div>
+                </div>
+                <!-- Popular News End -->
+
+                <!-- Newsletter Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
+                    </div>
+                    <div class="bg-white text-center border border-top-0 p-3">
+                        <p>Send your comment/idea</p>
+                        <div class="input-group mb-2" style="width: 100%;">
+                            <input type="text" class="form-control form-control-lg" placeholder="Your Email">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
+                            </div>
+                        </div>
+                        <small>Thanks for your kind words</small>
+                    </div>
+                </div>
+                <!-- Newsletter End -->
+
+                <!-- Tags Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <div class="d-flex flex-wrap m-n1" id="tag">
+                        </div>
+                    </div>
+                </div>
+                <!-- Tags End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- News With Sidebar End -->
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark pt-5 px-sm-3 px-md-5 mt-5">
+    <div class="row py-4">
+        <div class="col-lg-4 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Get In Touch</h5>
+            <p class="font-weight-medium"><i class="fa fa-map-marker-alt mr-2"></i>6 Le Loi Street, Hue, VN</p>
+            <p class="font-weight-medium"><i class="fa fa-phone-alt mr-2"></i>094337474</p>
+            <p class="font-weight-medium"><i class="fa fa-envelope mr-2"></i>dunews@gmail.com</p>
+            <h6 class="mt-4 mb-3 text-white text-uppercase font-weight-bold">Follow Us</h6>
+            <div class="d-flex justify-content-start">
+                <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-lg btn-secondary btn-lg-square" href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+       
+        <div class="col-lg-4 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>
+            <div class="m-n1" id="tags">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-5">
+            <h5 class="mb-4 text-white text-uppercase font-weight-bold">Sources</h5>
+            <div class="row" id="source">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    let today = new Date().toDateString();
+    document.getElementById("date").innerHTML = today;
+    const main = async () => {
+        var url = 'https://newsapi.org/v2/everything?q=tesla&from=2022-06-26&sortBy=publishedAt&apiKey=23c32970b28843338178d2c1168091f7';
+        var reponse = await fetch(url);
+        var data2 = await reponse.json()
+        var data = data2.articles;
+        renderSlide0(data);
+        renderSlide1(data);
+        renderSlide2(data);
+        renderSlide3(data);
+        renderSlide4(data);
+        renderSlide6(data);
+    }
+    const renderSlide0 = (data) => {
+        var domSlide = document.querySelector("#carousel")
+        var html = '';
+        //i<=2 but error
+        for (let i = 0; i <= 0; i++) {
+            var date = new Date(data[i].publishedAt).toLocaleString();
+            html += `
+              <div class="position-relative overflow-hidden" style="height: 500px;">
+                            <img class="img-fluid h-100" src="${data[i].urlToImage}" style="object-fit: cover; height:500px ; width:800px">
+                            <div class="overlay">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="${data[i].url}">${data[i].source.name}</a>
+                                    <a class="text-white" href="${data[i].url}">${date}</a>
+                                </div>
+                                <a class="h2 m-0 text-white text-uppercase font-weight-bold" id="title" href="${data[i].url}">${data[i].title}</a>
+                            </div>
+                        </div>
+                `;
+        }
+        ;
+        domSlide.innerHTML = html;
+    }
+
+    const renderSlide1 = (data) => {
+        var domSlide = document.querySelector("#content1")
+        var html = '';
+        for (let i = 1; i <= 4; i++) {
+            var date = new Date(data[i].publishedAt).toLocaleString();
+            html += `
+              <div class="col-md-6 px-0">
+                        <div class="position-relative overflow-hidden" style="height: 250px;">
+                            <img class="img-fluid w-100 h-100" src="${data[i].urlToImage}" style="object-fit: cover;">
+                            <div class="overlay">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="${data[i].url}">${data[i].source.name}</a><br>
+                                    <a class="text-white small" href="${data[i].url}">${date}</a>
+                                </div>
+                                <a id="title" data-toggle="tooltip" title="${data[i].title}" class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="${data[i].url}">${data[i].title}</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        }
+        ;
+        domSlide.innerHTML = html;
+    }
+    const renderSlide2 = (data) => {
+        var domSlide = document.querySelector("#breakingnew")
+        var html = '';
+        for (let i = 0; i <= 2; i++) {
+            html += `
+              <div class="text-truncate"><a  data-toggle="tooltip" title="${data[i].title}" class="text-white text-uppercase font-weight-semi-bold" href="${data[i].url}">${data[i].title}</a></div>
+                `;
+        }
+        ;
+        domSlide.innerHTML = html;
+    }
+    const renderSlide3 = (data) => {
+        var domSlide = document.querySelector("#content3")
+        var html = '';
+        html += `
+             <div class="col-12">
+                            <div class="section-title">
+                                <h4 class="m-0 text-uppercase font-weight-bold">Latest News</h4>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                            </div>
+                        </div>     `;
+        for (let i = 11; i <= 20; i++) {
+            var date = new Date(data[i].publishedAt).toLocaleString();
+            html += `
+              <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid" id="img1" src="${data[i].urlToImage}" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4" id="main_content_text">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="${data[i].url}">${data[i].source.name}</a>
+                                        <a class="text-body" href=""><small>${date}</small></a>
+                                    </div>
+                                    <a id="title" data-toggle="tooltip" title="${data[i].title}" class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="${data[i].url}">${data[i].title}</a>
+                                    <p id="contenttext" class="m-0" >${data[i].content}</p>
+                                </div>
+                                <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center" id="author">
+                                        <small>${data[i].author}</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                `;
+        }
+        ;
+        domSlide.innerHTML = html;
+    }
+    const renderSlide4 = (data) => {
+        var domSlide = document.querySelector("#content4")
+        var html = '';
+        for (let i = 21; i <= 26; i++) {
+            var date = new Date(data[i].publishedAt).toLocaleString();
+            html += `
+              <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" id="img2" src="${data[i].urlToImage}" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="${data[i].url}">${data[i].source.name}</a>
+                                        <a class="text-body" href="${data[i].url}"><small>${date}</small></a>
+                                    </div>
+                                    <a id="author" data-toggle="tooltip" title="${data[i].title}" class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="${data[i].url}">${data[i].title}</a>
+                                </div>
+                            </div>
+             
+                `;
+        }
+        ;
+        domSlide.innerHTML = html;
+    }
+    const renderSlide6 = (data) => {
+        var domSlide = document.querySelector("#source")
+        var html = '';
+        for (let i = 0; i <= 10; i++) {
+            var date = new Date(data[i].publishedAt).toLocaleString();
+            html += `
+              <a class="btn btn-sm btn-outline-secondary m-1 text-white" href="${data[i].url}">${data[i].source.name}</a>
+                `;
+        }
+        ;
+        domSlide.innerHTML = html;
+    }
+    const main2 = async () => {
+        var url = 'http://localhost:8081/api/category';
+        var reponse = await fetch(url);
+        var data= await reponse.json();
+        renderSlide(data);
+        renderSlide5(data);
+        renderSlide7(data);
+    }
+    const renderSlide5 = (data) => {
+        var domSlide = document.querySelector("#tag")
+        var html = '';
+        data.forEach((element,index) => {
+          html+=`
+          <a href="" class="btn btn-sm btn-outline-secondary m-1">${element.categoryName}</a>
+            `;
+         });
+         
+        console.log(domSlide);
+         domSlide.innerHTML=html;
+    }
+    const renderSlide = (data) => {
+        var domSlide = document.querySelector("#tags")
+        var html = '';
+        data.forEach((element,index) => {
+          html+=`
+    <a href="" class="btn btn-sm btn-secondary m-1">${element.categoryName}</a>
+            `;
+         });
+         
+        console.log(domSlide);
+         domSlide.innerHTML=html;
+    }
+    const renderSlide7 = (data) => {
+        var domSlide = document.querySelector("#dropdown")
+        var html = '';
+        data.forEach((element,index) => {
+          html+=`
+          <a href="category.html" class="dropdown-item text-capitalize">${element.categoryName}</a>
+            `;
+         });
+         
+        console.log(domSlide);
+         domSlide.innerHTML=html;
+    }
+    //business https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=23c32970b28843338178d2c1168091f7
+    main()
+    main2()
+</script>
+</body>
+
+</html>

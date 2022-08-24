@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+          content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>DUNEWS Admin</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <!-- Custom CSS -->
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar" data-navbarbg="skin5">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <div class="navbar-header" data-logobg="skin6">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <a class="navbar-brand">
+                    <!-- Logo icon -->
+                    <b class="logo-icon">
+                        <!-- Dark Logo icon -->
+                        <img src="plugins/images/banner.jpg" alt="homepage" />
+                    </b>
+                </a>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                   href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+                <!-- ============================================================== -->
+                <!-- Right side toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+
+                    <!-- ============================================================== -->
+                    <!-- Search -->
+                    <!-- ============================================================== -->
+                    <li class=" in">
+                        <form role="search" class="app-search d-none d-md-block me-3">
+                            <input type="text" placeholder="Search..." class="form-control mt-0">
+                            <a href="" class="active">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </form>
+                    </li>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <li>
+                        <a class="profile-pic" href="#">
+                            <img src="plugins/images/ava.png" alt="user-img" width="36"
+                                 class="img-circle"><span class="text-white font-medium" th:text="${username}"></span></a>
+                    </li>
+
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link text-body small" th:href="@{/logout}"><span class="text-white font-medium">Logout</span></a>
+                    </li>
+
+
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar" data-sidebarbg="skin6">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <!-- User Profile-->
+                    <li class="sidebar-item pt-2">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="home"
+                           aria-expanded="false">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <span class="hide-menu">Home</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="user"
+                           aria-expanded="false">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span class="hide-menu">User</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="category"
+                           aria-expanded="false">
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                            <span class="hide-menu">Category</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="article"
+                           aria-expanded="false">
+                            <i class="fa fa-font" aria-hidden="true"></i>
+                            <span class="hide-menu">Article</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="comment"
+                           aria-expanded="false">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                            <span class="hide-menu">Comment</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="error"
+                           aria-expanded="false">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <span class="hide-menu">Error</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb bg-white">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">User</h4>
+                    <span>New User? <a href="/" th:href="@{/registration}">Register
+							here</a></span>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- RECENT ARTICLE -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="white-box">
+                    <div class="table-responsive">
+                        <table class="table no-wrap" id="user1">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="renderUpdate">
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center"> 2021 © DuNEWS <a
+                href="http://localhost:8083/home">Dunews.com</a>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app-style-switcher.js"></script>
+<script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!--Wave Effects -->
+<script src="js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="js/sidebarmenu.js"></script>
+<!--Custom JavaScript -->
+<script src="js/custom.js"></script>
+<!--This page JavaScript -->
+<!--chartis chart-->
+<script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
+<script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+<script src="js/pages/dashboards/dashboard1.js"></script>
+<script>
+    const main = async () => {
+        var url = 'http://localhost:8083/api/user';
+        var reponse = await fetch(url);
+        var data = await reponse.json();
+        renderSlide0(data);
+    }
+    const renderSlide0 = (data) => {
+        var domSlide = document.querySelector("#user1")
+        var html = `
+                    <thead>
+                <tr>
+                    <th className="border-top-0" >#</th>
+                    <th className="border-top-0">Mail</th>
+                    <th className="border-top-0">First Name</th>
+                    <th className="border-top-0">Last Name</th>
+                    <th className="border-top-0">Roles</th>
+                    <th colspan="2">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+        `;
+        data.forEach((element,index) => {
+            html += `
+            <tr>
+                                        <td>${element.id}</td>
+                                        <td><span class="mb-3 d-block text-success">${element.email}</span></td>
+                                        <td>${element.firsName}</td>
+                                        <td class="txt-oflo">${element.lastName}</td>
+                                        <td>${element.roles[0].name}</td>
+                                        <td>
+                <button type="button" class="btn btn-primary" onclick='renderUpdate(${JSON.stringify(element)})'>
+                    Edit
+                </button>
+                <button type="button" class="btn btn-primary" onclick='deleteId(${element.id})'>
+                    Block/Delete
+                </button>
+                </td>
+                                    </tr>
+                `;
+        });
+        html+=`</tbody>
+        `;
+        domSlide.innerHTML = html;
+    }
+
+    const  renderUpdate=(data)=>{
+        let html=`
+        <div class="modal" id="modalUpdate">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit account</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="mb-3 mt-3">
+                            <label for="txtname_update" class="form-label">ID : </label>
+                            <input type="text" class="form-control" value="${data.id}" id="txtid"  name="txtid" readonly>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="txtmail_update" class="form-label">Email : </label>
+                            <input type="text" class="form-control" value="${data.email}" id="txtmail_update" placeholder="Enter email" name="txtmail">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="txtfirsName_update" class="form-label">First Name : </label>
+                            <input type="text" class="form-control" value="${data.firsName}" id="txtfirsName_update" placeholder="Enter First Name" name="txtfirsName">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="txtlastName_update" class="form-label">Last Name : </label>
+                            <input type="text" class="form-control" value="${data.lastName}" id="txtlastName_update" placeholder="Enter Last Name" name="txtlastName">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="txtpassword_update" class="form-label">Password : </label>
+                            <input type="password" class="form-control" value="${data.password}" id="txtpassword_update" placeholder="Enter Password" name="txtpassword">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="role2" class="form-label">Role : </label>
+                            <select id="role2" name="role2">
+                                <option value="${data.roles[0].name}" selected disabled hidden>${data.roles[0].name}</option>
+                                <option value="ROLE_USER">ROLE_USER</option>
+                                <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="Update()">Submit</button>
+                    </div>
+                </div>
+                </div>
+
+        </div>
+    </div>`;
+        document.querySelector("#renderUpdate").innerHTML=html;
+        console.log(html);
+        $('#modalUpdate').modal('show')
+    }
+    const deleteId=async (id)=>{
+        let response = await fetch("/api/user/delete?id="+id,{
+            method:"DELETE"
+        }).then(() => {
+            main()
+        });
+    }
+
+    const Update=async()=>{
+        let id=document.querySelector("#txtid").value;
+        let mail =document.querySelector("#txtmail_update").value;
+        let firsName = document.querySelector("#txtfirsName_update").value;
+        let lastName = document.querySelector("#txtlastName_update").value;
+        let password = document.querySelector("#txtpassword_update").value;
+        let role = document.querySelector("#role2").value;
+        let idrole=1;
+        if (role=='ROLE_ADMIN') idrole=4;
+        let dataSend = {
+            id: id,
+            firsName: firsName,
+            lastName: lastName,
+            email: mail,
+            password: password,
+            roles: [
+                {
+                    id: idrole,
+                    name: role
+                }
+            ]
+        }
+        let response = await fetch("/api/user/update",{
+            method:"PUT",
+            body:JSON.stringify(dataSend),
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then(rs=>{
+            if(rs.status==200){
+                alert("Update thành công!!!");
+                main()
+            }else{
+                alert("Update thất bại")
+            }
+        })
+    }
+    main()
+</script>
+</body>
+</html>
